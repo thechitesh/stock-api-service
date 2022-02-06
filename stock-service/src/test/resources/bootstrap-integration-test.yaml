@@ -1,0 +1,13 @@
+#spring:
+#  application:
+#    name: stock-service
+#    datasource:
+#      url: jdbc:h2:mem:test_db
+#      username: sa
+#      password:
+#      driverClassName: org.h2.Driver
+#    jpa:
+#      database-platform: org.hibernate.dialect.H2Dialect
+##      defer-datasource-initialization: true
+#  flyway:
+#    enabled: false

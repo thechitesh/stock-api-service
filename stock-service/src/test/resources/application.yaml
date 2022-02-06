@@ -1,0 +1,38 @@
+#spring:
+#  application:
+#    name: stock-service
+##  datasource:
+##    # we currently use the h2 database to run tests
+##    type: com.zaxxer.hikari.HikariDataSource
+##    url: jdbc:h2:mem:testdb
+##  jpa:
+##    database-platform: H2
+##    show-sql: true
+##    hibernate:
+##      ddl-auto: create
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/db
+#    #    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db
+#    username: user
+#    password: password
+#    #    type: com.zaxxer.hikari.HikariDataSource
+#    #    driver-class-name: com.mysql.jdbc.Driver
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    #    hikari:
+#    #      maximum-pool-size: 4
+#    #      data-source-properties: v$session.program=parties-service
+#  jpa:
+#    #    database-platform: mysql
+#    database-platform: org.hiberante.dialetct.MySQLSDialect
+#    database: mysql
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        #        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#    hibernate:
+#      ddl-auto: none
+#      use-new-id-generator-mappings: false
+#  flyway:
+#    enabled: false
+#

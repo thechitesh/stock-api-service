@@ -1,0 +1,12 @@
+.java-version
+.idea
+**/target
+*.iml
+**/logs
+**/.DS_Store
+**/work
+.mysql-data
+gen
+stocks-api-service.iml
+stocks-api-service.ipr
+stocks-api-service.iws
