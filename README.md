@@ -1,5 +1,5 @@
 
-##STOCKS API SERVICE
+## STOCKS API SERVICE
 
 
 Stock API service provides Restful service to add, update and fetch stocks.
