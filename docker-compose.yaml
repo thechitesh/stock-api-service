@@ -22,15 +22,15 @@ services:
     volumes:
       - './.mysql-data/db:/var/lib/mysql'
 
-  stocks-api-service:
-    image: stocks-api:latest
-    container_name: stocks-api
-    build: .
-    depends_on:
-      - mysql-db
-    links:
-      - mysql-db
-    ports:
-      - '8000:8000'
-    expose:
-      - '8000'
+#  stocks-api-service:
+#    image: stocks-api:latest
+#    container_name: stocks-api
+#    build: .
+#    depends_on:
+#      - mysql-db
+#    links:
+#      - mysql-db
+#    ports:
+#      - '8000:8000'
+#    expose:
+#      - '8000'
