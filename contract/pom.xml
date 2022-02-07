@@ -3,25 +3,43 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
+   <!-- <parent>
         <artifactId>stocks-api-service</artifactId>
         <groupId>com.myorg.stocks</groupId>
         <version>${revision}</version>
-    </parent>
+    </parent>-->
 
     <modelVersion>4.0.0</modelVersion>
-<!--    <groupId>com.myorg.stocks</groupId>-->
+    <groupId>com.myorg.stocks</groupId>
     <artifactId>contract</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <lombok.version>1.18.22</lombok.version>
+        <spring-web.version>5.3.15</spring-web.version>
+        <jackon-version>2.13.1</jackon-version>
+        <jackson-datawind.version>0.1.0</jackson-datawind.version>
+        <javax-annotation.version>1.3.2</javax-annotation.version>
+        <javax-validation.version>2.0.1.Final</javax-validation.version>
+        <swagger-annotation.version>2.1.2</swagger-annotation.version>
+        <swagger-core.version>2.1.12</swagger-core.version>
+        <springfox-swagger.version>3.0.0</springfox-swagger.version>
+        <javax-servlet.version>3.0-alpha-1</javax-servlet.version>
+        <gson.version>2.8.9</gson.version>
+        <spring-starter.version>2.6.3</spring-starter.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
+            <version>${jackon-version}</version>
         </dependency>
 
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
+            <version>${javax-annotation.version}</version>
         </dependency>
         <!--<dependency>
             <groupId>io.swagger</groupId>
@@ -30,59 +48,70 @@
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
+            <version>${javax-validation.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger.version}</version>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <scope>provided</scope>
+            <version>${javax-servlet.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+            <version>${spring-web.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
         </dependency>
 
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-starter.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-core</artifactId>
+            <version>${swagger-core.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>jackson-databind-nullable</artifactId>
+            <version>${jackson-datawind.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-annotations</artifactId>
+            <version>${swagger-annotation.version}</version>
         </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.9.0</version>
                 <configuration>
                     <source>11</source>
                     <target>11</target>

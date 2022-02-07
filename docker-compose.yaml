@@ -14,7 +14,6 @@ services:
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'password'
-#      MYSQL_ROOT_PASSWORD: 'root_password'
     hostname: mysql-host
     ports:
       - '3306:3306'

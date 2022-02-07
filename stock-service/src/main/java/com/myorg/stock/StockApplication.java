@@ -4,11 +4,11 @@ import com.myorg.stock.config.StockProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-//@EnableTransactionManagement
-//@EnableJpaRepositories
-//@EnableSwagger2
-//@Import(BeanValidationPostProcessor.class)
+@EnableTransactionManagement
+@EnableJpaRepositories
 @SpringBootApplication
 @EnableConfigurationProperties(StockProperties.class)
 public class StockApplication {
