@@ -35,7 +35,6 @@ public class LinkMapper {
     return buildLinkResponse(selfRel.getHref());
   }
 
-
   private LinkResponse buildLinkResponse(String link) {
     LinkResponse linkResponse = new LinkResponse();
     linkResponse.setHref(link);

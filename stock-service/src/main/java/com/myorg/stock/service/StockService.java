@@ -19,7 +19,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -32,7 +31,6 @@ public class StockService {
   private final LinkMapper linkMapper;
   private final StockProperties stockProperties;
 
-
   public Optional<PageableContent> getStockByPage(int page) {
     int currentPageIndex;
     if (page < 1) {
@@ -40,7 +38,7 @@ public class StockService {
     } else {
       currentPageIndex = page - 1;
     }
-    log.debug("page {} with  size {}", currentPageIndex, stockProperties.getPageSize());
+    log.trace("page {} with  size {}", currentPageIndex, stockProperties.getPageSize());
 
     Pageable stocksPage = PageRequest.of(currentPageIndex, stockProperties.getPageSize());
     Page<StockEntity> pagedStocks = stockRepository.findAll(stocksPage);
@@ -69,7 +67,7 @@ public class StockService {
   public Stock updatePrice(Long stockId, Price updatedPrice) {
     Optional<StockEntity> stockById = stockRepository.findById(stockId);
     if (stockById.isEmpty()) {
-      log.debug("Stock with id {} is not found", stockById);
+      log.trace("Stock with id {} is not found", stockById);
       throw new StockNotFoundException("Stock not found");
     }
     StockEntity stockWithUpdatedPrice = stockMapper.updatePriceOfStockEntity(stockById.get(), updatedPrice);
@@ -78,7 +76,7 @@ public class StockService {
   }
 
   public void deleteStock(Long stockId) {
-    log.debug("About to delete the stock with id {} ", stockId);
+    log.trace("About to delete the stock with id {} ", stockId);
     try {
       stockRepository.deleteById(stockId);
     } catch (EmptyResultDataAccessException exp) {

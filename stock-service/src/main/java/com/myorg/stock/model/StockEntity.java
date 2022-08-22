@@ -1,19 +1,28 @@
 package com.myorg.stock.model;
 
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
-import javax.annotation.processing.Generated;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 import static javax.persistence.EnumType.STRING;
 
 @Getter
 @Builder(toBuilder = true)
-//@Data
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
@@ -21,7 +30,7 @@ import static javax.persistence.EnumType.STRING;
 public class StockEntity {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @PrimaryKeyJoinColumn
     private Long id;
 
@@ -32,13 +41,6 @@ public class StockEntity {
     @Column(name = "SYMBOL")
     private String symbol;
 
-//    @OneToOne
-//    @JoinColumn(name = "amount_id", referencedColumnName = "id")
-
-
-//    @OneToOne(mappedBy = "stock", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "stock")
-//    private PriceEntity price;
     @Column(name = "price")
     private BigDecimal price;
 
@@ -51,5 +53,4 @@ public class StockEntity {
 
     @Column(name = "LAST_UPDATE_AT")
     private LocalDateTime lastUpdate;
-
 }

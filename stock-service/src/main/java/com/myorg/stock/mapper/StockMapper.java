@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 @Component
 public class StockMapper {
 
-
   public PageableContent mapToPageableContent(List<StockEntity> stockEntities, Links links) {
     List<Stock> stocks = mapToStockList(stockEntities);
     PageableContent pageableContent = new PageableContent();
