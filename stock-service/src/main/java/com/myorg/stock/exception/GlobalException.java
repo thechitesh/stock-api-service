@@ -14,12 +14,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class GlobalException extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(value = { IllegalArgumentException.class, IllegalStateException.class , StockBadRequestException.class})
+    @ExceptionHandler(value = {IllegalArgumentException.class, IllegalStateException.class, StockBadRequestException.class})
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
         val status = HttpStatus.BAD_REQUEST;
         return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), status, request);
     }
-
 
     @ExceptionHandler(value = StockNotFoundException.class)
     protected ResponseEntity<Object> handlePartyNotFoundException(RuntimeException ex, WebRequest request) {
